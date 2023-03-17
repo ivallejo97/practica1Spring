@@ -1,0 +1,18 @@
+.card{
+    width: 100%;
+    max-width: 340px;
+    margin: 0 auto;
+    transition: 0.75s all ease-in-out;
+    margin-top: 10px;
+}
+.card:hover{
+    transform: scale(1.1);
+}
+.card-header{
+    background-color: #007bff;
+    color: white;
+}
+.list-group-item active {
+    display: inline-block;
+    border: 1px solid white;
+}
