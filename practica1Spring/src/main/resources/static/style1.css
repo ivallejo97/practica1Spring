@@ -16,3 +16,27 @@
     display: inline-block;
     border: 1px solid white;
 }
+
+
+.flexbox {
+  margin: auto;
+  border: 5px solid black;
+  width: 150px;
+  height: 80px;
+  margin-left: 30px;
+  font: oblique bold 100% cursive;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  background: #007bff;
+  color: white;
+}
+
+
+.lineaSeparatoria{
+    height: 5px;
+    background-color: #000000;
+    margin-left: 35px;
+    margin-right: 35px;
+    box-shadow: 0px 10px 10px black;
+}

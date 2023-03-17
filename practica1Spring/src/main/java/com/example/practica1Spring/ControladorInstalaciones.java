@@ -20,11 +20,11 @@ public class ControladorInstalaciones {
     public String getInstalacionesQuote(Model model){
         InstalacionesQuote[] instalacionesQuote = servicioInstalaciones.getInstalacionesQuote();
 
-            int i = (int) (Math.random()*13);
-            //int i = (int) (Math.random()*13);
+            int i = 0;
 
+            model.addAttribute("lista",instalacionesQuote);
 
-            model.addAttribute("anys", instalacionesQuote[i].anys());
+          /*model.addAttribute("anys", instalacionesQuote[i].anys());
             model.addAttribute("polideportivos", instalacionesQuote[i].camps_poliesportius());
             model.addAttribute("atletismo", instalacionesQuote[i].espais_d_atletisme());
             model.addAttribute("piscinas_libres", instalacionesQuote[i].piscines_a_l_aire_lliure());
@@ -40,8 +40,7 @@ public class ControladorInstalaciones {
             model.addAttribute("otros", instalacionesQuote[i].altres_espais_esportius());
             model.addAttribute("restantes", instalacionesQuote[i].rees_d_activitat_esportiva());
             model.addAttribute("espacios_censados", instalacionesQuote[i].total_espais_censats());
-            model.addAttribute("instalaciones_totales", instalacionesQuote[i].instal_lacions());
-
+            model.addAttribute("instalaciones_totales", instalacionesQuote[i].instal_lacions());*/
 
 
         return "web";

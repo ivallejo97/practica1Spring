@@ -14,13 +14,21 @@
   <br>
 </div>
 
-<br>
+
+
+
+<div th:each="EL : ${lista}" >
+
+  <br>
+    <div class="flexbox">
+      <h2 th:text="${EL.anys}"></h2>
+    </div>
+  <br>
 
 <div class="container-fluid  d-flex justify-content-center">
   <!-- <div class="col-12 col-md6 col-xl4 nt-3"> -->
-
     <div class="card">
-      <div class="card-header active">
+      <div class="card-header">
         Polideportivos
       </div>
       <img src="https://ajuntament.barcelona.cat/campdelferro/wp-content/uploads/2020/03/camp-del-ferro-26-02-28-scaled.jpg"  class="card-img-top" width="150px" height="150px">
@@ -28,15 +36,12 @@
         Un complejo polideportivo puede incluir además canchas de fútbol y de tenis, pistas de atletismo y piscinas. Así, en una misma zona, se concentran una amplia variedad de actividades deportivas.
       </div>
       <ul class="list-group list-group-flush">
-        <li class="list-group-item active">Año: <span class="mb-1" th:text="${anys}"></span></li>
-        <li class="list-group-item active">Número de instalaciones: <span class="mb-1" th:text="${polideportivos}"></span></li>
+        <li class="list-group-item active">Número de instalaciones: <span class="mb-1" th:text="${EL.camps_poliesportius}"></span></li>
       </ul>
       <div class="card-footer">
         <a href="https://analisi.transparenciacatalunya.cat/resource/nw5s-4ixa.json">Fuente de datos</a>
       </div>
     </div>
-
-
 
     <div class="card">
       <div class="card-header">
@@ -47,8 +52,7 @@
         Pistas ubicadas al aire libre, las cuales están adaptadas para realizar diferentes actividades deportivas, como correr, saltos de longitud, lanzamientos de jabalina...
       </div>
       <ul class="list-group list-group-flush">
-        <li class="list-group-item active">Año: <span class="mb-1" th:text="${anys}"></span></li>
-        <li class="list-group-item active">Número de instalaciones: <span class="mb-1" th:text="${atletismo}"></span></li>
+        <li class="list-group-item active">Número de instalaciones: <span class="mb-1" th:text="${EL.espais_d_atletisme}"></span></li>
       </ul>
       <div class="card-footer">
         <a href="https://analisi.transparenciacatalunya.cat/resource/nw5s-4ixa.json">Fuente de datos</a>
@@ -64,8 +68,7 @@
       Espacios ubicados al aire libre en los cuales se ubica una piscina .
     </div>
     <ul class="list-group list-group-flush">
-      <li class="list-group-item active">Año: <span class="mb-1" th:text="${anys}"></span></li>
-      <li class="list-group-item active">Número de instalaciones: <span class="mb-1" th:text="${piscinas_libres}"></span></li>
+      <li class="list-group-item active">Número de instalaciones: <span class="mb-1" th:text="${EL.piscines_a_l_aire_lliure}"></span></li>
     </ul>
     <div class="card-footer">
       <a href="https://analisi.transparenciacatalunya.cat/resource/nw5s-4ixa.json">Fuente de datos</a>
@@ -81,13 +84,13 @@
       Espacios cerrados en los cuales se ubica una piscina.
     </div>
     <ul class="list-group list-group-flush">
-      <li class="list-group-item active">Año: <span class="mb-1" th:text="${anys}"></span></li>
-      <li class="list-group-item active">Número de instalaciones: <span class="mb-1" th:text="${piscinas_cubiertas}"></span></li>
+      <li class="list-group-item active">Número de instalaciones: <span class="mb-1" th:text="${EL.piscines_cobertes}"></span></li>
     </ul>
     <div class="card-footer">
       <a href="https://analisi.transparenciacatalunya.cat/resource/nw5s-4ixa.json">Fuente de datos</a>
     </div>
   </div>
+
 
   <!-- </div> -->
 </div>
@@ -107,8 +110,7 @@
       Un complejo polideportivo puede incluir además canchas de fútbol y de tenis, pistas de atletismo y piscinas. Así, en una misma zona, se concentran una amplia variedad de actividades deportivas.
     </div>
     <ul class="list-group list-group-flush">
-      <li class="list-group-item active">Año: <span class="mb-1" th:text="${anys}"></span></li>
-      <li class="list-group-item active">Número de instalaciones: <span class="mb-1" th:text="${pistas_polideportivas}"></span></li>
+      <li class="list-group-item active">Número de instalaciones: <span class="mb-1" th:text="${EL.pistes_poliesportives}"></span></li>
     </ul>
     <div class="card-footer">
       <a href="https://analisi.transparenciacatalunya.cat/resource/nw5s-4ixa.json">Fuente de datos</a>
@@ -125,8 +127,7 @@
       Los pabellones són espacios iguales a los polideportivos, en los cuales se pueden practicar varios deportes, como fútbol, básquet, handball ...
     </div>
     <ul class="list-group list-group-flush">
-      <li class="list-group-item active">Año: <span class="mb-1" th:text="${anys}"></span></li>
-      <li class="list-group-item active">Número de instalaciones: <span class="mb-1" th:text="${pavellones}"></span></li>
+      <li class="list-group-item active">Número de instalaciones: <span class="mb-1" th:text="${EL.pavellons}"></span></li>
     </ul>
     <div class="card-footer">
       <a href="https://analisi.transparenciacatalunya.cat/resource/nw5s-4ixa.json">Fuente de datos</a>
@@ -142,8 +143,7 @@
       Las pistas de tenis, són espacios habilitados y adaptados para la práctica del deporte.
     </div>
     <ul class="list-group list-group-flush">
-      <li class="list-group-item active">Año: <span class="mb-1" th:text="${anys}"></span></li>
-      <li class="list-group-item active">Número de instalaciones: <span class="mb-1" th:text="${pistas_tenis}"></span></li>
+      <li class="list-group-item active">Número de instalaciones: <span class="mb-1" th:text="${EL.pistes_de_tennis}"></span></li>
     </ul>
     <div class="card-footer">
       <a href="https://analisi.transparenciacatalunya.cat/resource/nw5s-4ixa.json">Fuente de datos</a>
@@ -159,8 +159,7 @@
       Las pistas de pádel són espacios prácticamente iguales que las pistas de tenis con la diferencia de que són más pequeños y están cerrados. Habilitados para jugar a pádel.
     </div>
     <ul class="list-group list-group-flush">
-      <li class="list-group-item active">Año: <span class="mb-1" th:text="${anys}"></span></li>
-      <li class="list-group-item active">Número de instalaciones: <span class="mb-1" th:text="${pistas_padel}"></span></li>
+      <li class="list-group-item active">Número de instalaciones: <span class="mb-1" th:text="${EL.pistes_de_p_del}"></span></li>
     </ul>
     <div class="card-footer">
       <a href="https://analisi.transparenciacatalunya.cat/resource/nw5s-4ixa.json">Fuente de datos</a>
@@ -185,8 +184,7 @@
       Salas ubicadas en espacios cerrados habilitadas con el material necesario para realizar distintas actividades, ejercicios cardiovasculares, ejercicios de fuerza...
     </div>
     <ul class="list-group list-group-flush">
-      <li class="list-group-item active">Año: <span class="mb-1" th:text="${anys}"></span></li>
-      <li class="list-group-item active">Número de instalaciones: <span class="mb-1" th:text="${salas_deportivas}"></span></li>
+      <li class="list-group-item active">Número de instalaciones: <span class="mb-1" th:text="${EL.sales_esportives}"></span></li>
     </ul>
     <div class="card-footer">
       <a href="https://analisi.transparenciacatalunya.cat/resource/nw5s-4ixa.json">Fuente de datos</a>
@@ -203,8 +201,7 @@
       Son pistas parecidas a las de frontón, pero se ubican en espacios cerrados.
     </div>
     <ul class="list-group list-group-flush">
-      <li class="list-group-item active">Año: <span class="mb-1" th:text="${anys}"></span></li>
-      <li class="list-group-item active">Número de instalaciones: <span class="mb-1" th:text="${pistas_squash}"></span></li>
+      <li class="list-group-item active">Número de instalaciones: <span class="mb-1" th:text="${EL.pistes_d_esquaix}"></span></li>
     </ul>
     <div class="card-footer">
       <a href="https://analisi.transparenciacatalunya.cat/resource/nw5s-4ixa.json">Fuente de datos</a>
@@ -220,8 +217,7 @@
       Pistas con una gran pared que tiene una línea baja pintada en la pared, por la cual el balón no podrá pasar debajo de esa línea, también tiene una línea al final del campo que marca su limite.
     </div>
     <ul class="list-group list-group-flush">
-      <li class="list-group-item active">Año: <span class="mb-1" th:text="${anys}"></span></li>
-      <li class="list-group-item active">Número de instalaciones: <span class="mb-1" th:text="${fronton}"></span></li>
+      <li class="list-group-item active">Número de instalaciones: <span class="mb-1" th:text="${EL.frontons}"></span></li>
     </ul>
     <div class="card-footer">
       <a href="https://analisi.transparenciacatalunya.cat/resource/nw5s-4ixa.json">Fuente de datos</a>
@@ -237,8 +233,7 @@
       Espacios de arena ubicados en parques, tienen una manera rectangular y sirven para jugar a la petanca.
     </div>
     <ul class="list-group list-group-flush">
-      <li class="list-group-item active">Año: <span class="mb-1" th:text="${anys}"></span></li>
-      <li class="list-group-item active">Número de instalaciones: <span class="mb-1" th:text="${petancas}"></span></li>
+      <li class="list-group-item active">Número de instalaciones: <span class="mb-1" th:text="${EL.espais_de_petanca}"></span></li>
     </ul>
     <div class="card-footer">
       <a href="https://analisi.transparenciacatalunya.cat/resource/nw5s-4ixa.json">Fuente de datos</a>
@@ -263,8 +258,7 @@
       Otros espacios deportivos no comentados anteriormente como pueden ser campos de fútbol, de básquet, gimnasios...
     </div>
     <ul class="list-group list-group-flush">
-      <li class="list-group-item active">Año: <span class="mb-1" th:text="${anys}"></span></li>
-      <li class="list-group-item active">Número de instalaciones: <span class="mb-1" th:text="${otros}"></span></li>
+      <li class="list-group-item active">Número de instalaciones: <span class="mb-1" th:text="${EL.altres_espais_esportius}"></span></li>
     </ul>
     <div class="card-footer">
       <a href="https://analisi.transparenciacatalunya.cat/resource/nw5s-4ixa.json">Fuente de datos</a>
@@ -280,8 +274,7 @@
       Al igual que en otras instalaciones, estas són el resto de instalaciones de la que no se ha hablado anteriormente.
     </div>
     <ul class="list-group list-group-flush">
-      <li class="list-group-item active">Año: <span class="mb-1" th:text="${anys}"></span></li>
-      <li class="list-group-item active">Número de instalaciones: <span class="mb-1" th:text="${restantes}"></span></li>
+      <li class="list-group-item active">Número de instalaciones: <span class="mb-1" th:text="${EL.rees_d_activitat_esportiva}"></span></li>
     </ul>
     <div class="card-footer">
       <a href="https://analisi.transparenciacatalunya.cat/resource/nw5s-4ixa.json">Fuente de datos</a>
@@ -297,8 +290,7 @@
       Espacios en los cuales se recopilan datos sobre el número de instalaciones deportivas, el número de clubes deportivos, el número de deportistas federados o aficionados, el tipo de deportes que se practican, el nivel de práctica deportiva en la población, la inversión pública y privada en el deporte...
     </div>
     <ul class="list-group list-group-flush">
-      <li class="list-group-item active">Año: <span class="mb-1" th:text="${anys}"></span></li>
-      <li class="list-group-item active">Número de instalaciones: <span class="mb-1" th:text="${espacios_censados}"></span></li>
+      <li class="list-group-item active">Número de instalaciones: <span class="mb-1" th:text="${EL.total_espais_censats}"></span></li>
     </ul>
     <div class="card-footer">
       <a href="https://analisi.transparenciacatalunya.cat/resource/nw5s-4ixa.json">Fuente de datos</a>
@@ -314,8 +306,7 @@
       Número total de instalaciones deportivas que se pueden encontrar en cataluña.
     </div>
     <ul class="list-group list-group-flush">
-      <li class="list-group-item active">Año: <span class="mb-1" th:text="${anys}"></span></li>
-      <li class="list-group-item active">Número de instalaciones: <span class="mb-1" th:text="${instalaciones_totales}"></span></li>
+      <li class="list-group-item active">Número de instalaciones: <span class="mb-1" th:text="${EL.instal_lacions}"></span></li>
     </ul>
     <div class="card-footer">
       <a href="https://analisi.transparenciacatalunya.cat/resource/nw5s-4ixa.json">Fuente de datos</a>
@@ -324,14 +315,13 @@
 
   <!-- </div> -->
 </div>
+  <br>
+  <br>
 
-<br>
-<br>
+  <hr class="lineaSeparatoria">
 
+</div>
 
-
-<br>
-<br>
 
 
 </div>
